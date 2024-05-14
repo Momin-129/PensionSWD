@@ -1,0 +1,31 @@
+<form id="bankFile">
+    <div class="text-dark vh-100 d-flex flex-column align-items-center justify-content-center p-5">
+        <div class="container rounded shadow-lg p-5 w-sm-50 d-flex flex-column gap-2">
+            <label for="District" class="form-label fw-bold">Distrct LGD Code</label>
+            <select class="form-select rounded-pill" name="district" id="district">
+
+            </select>
+            <label for="Month" class="form-label fw-bold">Month</label>
+            <input class="form-control rounded-pill" type="text" name="month" id="month" required>
+            <label for="Year" class="form-label fw-bold">Year</label>
+            <input class="form-control rounded-pill" type="text" name="year" id="year" required>
+            <button class="btn btn-outline-dark w-sm-50 rounded-pill mx-auto">Generate File</button>
+        </div>
+    </div>
+</form>
+<div id="duplicateContainer" class="text-dark vh-100 d-flex flex-column align-items-center justify-content-center p-5">
+</div>
+<script>
+    let Result = @Html.Raw(Json.Serialize(Model));
+    var applicationRoot = "@Url.Content("~")";
+    const districts = Result[0].districts;
+    districts.map(item => {
+        $("#district").append(`
+        <option value="${item.districtLgdCode} ${item.divisionCode}" >${item.districtName}</option>
+    `);
+    });
+
+
+</script>
+<script src="~/js/User/user.js"></script>
+<script src="~/js/User/generateFile.js"></script>

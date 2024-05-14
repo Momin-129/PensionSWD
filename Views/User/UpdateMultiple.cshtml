@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+
+<form id="updateForm">
+    <div class="text-dark vh-100 d-flex align-items-center justify-content-center">
+        <div class="container d-flex flex-column justify-content-center gap-3 shadow-lg p-3 rounded">
+            <p class="fs-1 fw-bold text-center">Update Multiple Records</p>
+
+            <div class="d-flex flex-column align-items-center justify-content-center gap-3">
+                <label for="excelColumn" class="fs-6 fw-bold">Column to update</label>
+                <select class="form-select w-50 rounded-pill" name="excelColumn" id="excelColumn">
+                    <option value="">Please Select</option>
+                    <option value="applicantName">Applicant Name</option>
+                    <option value="eligibleForPension">Eligible For Pension</option>
+                    <option value="accountNo">Account Number</option>
+                    <option value="ifscCode">IFSC Code</option>
+                    <option value="weedout">Weedout Cases</option>
+                </select>
+
+            </div>
+
+            <div id="form">
+
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<div class="container mt-5">
+    <div style="overflow-x: auto;">
+        <table class="table table-light table-striped table-bordered">
+            <tbody id="response">
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+<script>
+    let Result = @Html.Raw(Json.Serialize(Model));
+    var applicationRoot = "@Url.Content("~")";
+</script>
+<script src="~/js/User/user.js"></script>
+<script src="~/js/User/update.js"></script>

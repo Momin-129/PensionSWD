@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<form id="updateForm">
+    <div class="text-dark vh-100 d-flex align-items-center justify-content-center">
+
+        <div class="container d-flex flex-column align-items-center justify-content-center gap-3 shadow-lg p-3 rounded">
+            <p class="fs-1 fw-bold text-center">Update Individual Record</p>
+
+            <label for="refNo">Reference Number</label>
+            <input class="form-control w-50 rounded-pill" type="text" name="refNo" id="refNo" />
+
+            <label for="columnToEdit">Column To Edit</label>
+            <select class="form-select w-50 rounded-pill" name="column" id="column">
+                <option value="">Please Select</option>
+                <option value="applicantName">Applicant Name</option>
+                <option value="eligibleForPension">Eligible For Pension</option>
+                <option value="accountNo">Account Number</option>
+                <option value="ifscCode">IFSC Code</option>
+            </select>
+
+            <div id="form">
+
+            </div>
+
+        </div>
+    </div>
+
+</form>
+
+<div class="container mt-5">
+    <table class="container bg-white p-0 shadow-lg flex-column justify-content-between mt-3"
+        style="border-radius: 10px;max-height:600px;overflow-y:auto;">
+        <tbody id="response" class="table table-borderless table-responsive">
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+    let Result = @Html.Raw(Json.Serialize(Model));
+    let count = Result[0].total;
+    let usercount = Result[0].usercount;
+    let username = Result[0].user;
+    var applicationRoot = "@Url.Content("~")";
+</script>
+<script src="~/js/User/user.js"></script>
+<script src="~/js/User/updateIndividual.js"></script>

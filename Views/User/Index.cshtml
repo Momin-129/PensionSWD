@@ -1,0 +1,14 @@
+<div class="text-dark vh-100 d-flex align-items-center justify-content-center px-4">
+    <div class="container-fluid">
+        <p class="fs-1 text-center fw-bold">HOME</p>
+    </div>
+</div>
+
+
+<script>
+    let Result = @Html.Raw(Json.Serialize(Model));
+    let count = Result[0].total;
+    let usercount = Result[0].usercount;
+    let username = Result[0].user;
+</script>
+<script src="~/js/User/user.js"></script>

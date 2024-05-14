@@ -1,0 +1,16 @@
+<form>
+    <div class="text-dark vh-100 d-flex flex-column align-items-center justify-content-center p-5">
+        <div class="container rounded shadow-lg p-5 w-sm-50 d-flex flex-column gap-2">
+            <label for="excelFile" class="form-label fw-bold">Departemnt Vefied Excel File</label>
+            <input class="form-control rounded-pill" type="file" accept=".xlsx" name="excelFile" id="excelFile"
+                required>
+            <button class="btn btn-outline-dark w-sm-50 rounded-pill generateFile mx-auto">Update Data</button>
+        </div>
+    </div>
+</form>
+<script>
+    let Result = @Html.Raw(Json.Serialize(Model));
+    var applicationRoot = "@Url.Content("~")";
+</script>
+<script src="~/js/User/user.js"></script>
+<script src="~/js/User/departmentFile.js"></script>

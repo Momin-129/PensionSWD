@@ -1,0 +1,21 @@
+<form id="departmentFile">
+    <div class="text-dark vh-100 d-flex flex-column align-items-center justify-content-center p-5">
+        <div class="container rounded shadow-lg p-5 w-sm-50 d-flex flex-column gap-2">
+            <label for="Division" class="form-label fw-bold">Divison</label>
+            <select name="division" id="division" class="form-select rounded-pill">
+                <option value="jammu">Jammu</option>
+                <option value="kashmir">Kashmir</option>
+            </select>
+            <label for="cycle" class="form-label fw-bold">Cycle</label>
+            <input class="form-control rounded-pill" placeholder="eg: 01Oct2022-30April2024" type="text" name="cycle"
+                id="cycle" required>
+            <button class="btn btn-outline-dark w-sm-50 rounded-pill generateFile mx-auto">Generate File</button>
+        </div>
+    </div>
+</form>
+<script>
+    let Result = @Html.Raw(Json.Serialize(Model));
+    var applicationRoot = "@Url.Content("~")";
+</script>
+<script src="~/js/User/user.js"></script>
+<script src="~/js/User/generateFile.js"></script>

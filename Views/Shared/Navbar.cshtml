@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top py-5">
+    <div class="container-fluid w-75 shadow px-4 py-2 rounded bg-white">
+        <a class="navbar-brand">SWD Pension</a>
+        <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="bi bi-caret-down-square-fill"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav userSection  navbar-nav-scroll w-100 justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" asp-controller="User" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" asp-controller="User" asp-action="Record">Records</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Update
+                    </a>
+                    <ul class="dropdown-menu" id="updateRecordsUl">
+                        <li>
+                            <a class="dropdown-item" asp-controller="User" asp-action="UpdateIndividual">
+                                Individual Records
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" asp-controller="User" asp-action="UpdateMultiple">
+                                Multiple Records
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="Reports">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="GetFileUploaded">Files Uploaded</a>
+                </li>
+            </ul>
+            <div class="d-flex navend justify-content-end w-100">
+                <a class="btn btn-outline-dark" id="registerButton" asp-controller="Home"
+                    asp-action="Register">Register</a>
+                <li class="nav-item dropdown userSection list-unstyled">
+                    <a class="dropdown-toggle btn btn-outline-dark" id="username" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item">
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Logout">
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+    </div>
+</nav>
