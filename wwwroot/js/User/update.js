@@ -61,7 +61,6 @@ $(document).ready(function () {
       .then((res) => res.json())
       .then((data) => {
         if (data.status) {
-          console.log(data);
           $("#excel").replaceWith($("#excel").val("").clone(true));
           $("#response").parent().find("thead").remove();
           $("#response").empty();
@@ -86,6 +85,8 @@ $(document).ready(function () {
               tr.append(`<td>${list}</td>`);
             }
             $("#response").append(tr);
+            console.log(item);
+            console.log($("#response").html());
           });
           $("#response")
             .parent()

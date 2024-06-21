@@ -4,7 +4,7 @@
 
 
 <form id="updateForm">
-    <div class="text-dark vh-100 d-flex align-items-center justify-content-center">
+    <div class="text-dark vh-100 d-flex flex-column align-items-center justify-content-center">
         <div class="container d-flex flex-column justify-content-center gap-3 shadow-lg p-3 rounded">
             <p class="fs-1 fw-bold text-center">Update Multiple Records</p>
 
@@ -26,19 +26,19 @@
             </div>
 
         </div>
+        <div class="container mt-3">
+            <div style="overflow-x: auto;">
+                <table class="table table-light table-striped table-bordered">
+                    <tbody id="response">
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
     </div>
 </form>
 
-<div class="container mt-5">
-    <div style="overflow-x: auto;">
-        <table class="table table-light table-striped table-bordered">
-            <tbody id="response">
-
-            </tbody>
-        </table>
-    </div>
-
-</div>
 
 
 <script>

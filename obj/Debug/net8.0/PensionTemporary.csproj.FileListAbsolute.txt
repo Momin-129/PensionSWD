@@ -265,8 +265,3 @@
 /home/momin/Github/NIC/PensionTemporary/output/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /home/momin/Github/NIC/PensionTemporary/output/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 /home/momin/Github/NIC/PensionTemporary/bin/Debug/net8.0/System.Net.WebSockets.WebSocketProtocol.dll
-/home/momin/Github/NIC/PensionTemporary/bin/Debug/net8.0/publish/web.config
-/home/momin/Github/NIC/PensionTemporary/bin/Debug/net8.0/publish/appsettings.Development.json
-/home/momin/Github/NIC/PensionTemporary/bin/Debug/net8.0/publish/appsettings.json
-/home/momin/Github/NIC/PensionTemporary/bin/Debug/net8.0/publish/PensionTemporary.deps.json
-/home/momin/Github/NIC/PensionTemporary/bin/Debug/net8.0/publish/PensionTemporary.runtimeconfig.json

@@ -1,87 +1,4 @@
-using System.Data;
-using ClosedXML.Excel;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using PensionTemporary.Models.Entities;
-
-public class HelperFunction
-{
-    private readonly PensionContext dbContext;
-    private readonly ILogger<HelperFunction> _logger;
-    private readonly ValidationFunctions validation;
-    private readonly IWebHostEnvironment _webHostEnvironment;
-    public HelperFunction(PensionContext dbContext, ILogger<HelperFunction> logger, IWebHostEnvironment webHostEnvironment, ValidationFunctions _validation)
-    {
-        this.dbContext = dbContext;
-        _logger = logger;
-        _webHostEnvironment = webHostEnvironment;
-        validation = _validation;
-    }
-
-    public async Task<(string, string)> GetFilePath(IFormFile file)
-    {
-        string docPath = "";
-        string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
-        string uniqueName = Guid.NewGuid().ToString()[..6] + "_" + DateTime.Now.ToString("dd_MM_yyyy") + "_" + file?.FileName;
-        if (!Directory.Exists(uploadsFolder))
-        {
-            Directory.CreateDirectory(uploadsFolder);
-        }
-
-        if (file != null && file.Length > 0)
-        {
-            string filePath = Path.Combine(uploadsFolder, uniqueName);
-            _logger.LogInformation($"IN GET FILE PATH: {filePath}");
-
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await file.CopyToAsync(stream);
-            }
-
-            docPath = filePath;
-        }
-
-        return (docPath, uniqueName);
-    }
-
-    public void UpdateHistory(string refNo, string OldValue, string NewValue, string ipAddress, string username, string columnToEdit, string Reason, string filePath)
-    {
-        var TableName = new SqlParameter("@TableName", "jkSWdeliveredMay30");
-        var ColumnName = new SqlParameter("@ColumnName", columnToEdit);
-        var refNoParam = new SqlParameter("@refNo", refNo);
-        var OldValueParam = new SqlParameter("@OldValue", OldValue);
-        var NewValueParam = new SqlParameter("@NewValue", NewValue);
-        var BulkUpdate = new SqlParameter("@BulkUpdate", filePath.Length != 0 ? 1 : 0);
-        var FileUsed = new SqlParameter("@FileUsed", filePath);
-        var UpdatedBy = new SqlParameter("@UpdatedBy", username);
-        var IpAddress = new SqlParameter("@IpAddress", ipAddress);
-        var UpdatedAt = new SqlParameter("@UpdatedAt", DateTime.Now.ToString());
-        var ReasonParam = new SqlParameter("@Reason", Reason);
-        var descriptionParameter = new SqlParameter("@Description", SqlDbType.NVarChar, -1)
-        {
-            Direction = ParameterDirection.Output
-        };
-
-
-        dbContext.Database.ExecuteSqlRaw("EXEC UpdateHistoryTable @TableName, @ColumnName, @RefNo, @OldValue, @NewValue,@BulkUpdate,@FileUsed,@UpdatedBy, @IpAddress, @UpdatedAt, @Reason, @Description OUTPUT", TableName, ColumnName, refNoParam, OldValueParam, NewValueParam, BulkUpdate, FileUsed, UpdatedBy, IpAddress, UpdatedAt, ReasonParam, descriptionParameter);
-    }
-
-    public dynamic UpdatedData(string RefNo, string AccountNo, string IfscCode, string EligibleForPension, string status, string Reason)
-    {
-        var updatedData = new
-        {
-            RefrenceNumber = RefNo,
-            AccountNumber = AccountNo,
-            IfscCode = IfscCode,
-            EligibleForPension = EligibleForPension,
-            Status = status,
-            Reason = Reason
-        };
-        return updatedData;
-    }
-
-
-    public List<dynamic> UpdateEligibilityData(string filePath, int? divisionCode, string ipAddress, string username)
+ public List<dynamic> UpdateEligibilityData(string filePath, int? divisionCode, string ipAddress, string username)
     {
         using var stream = new FileStream(filePath, FileMode.Open);
         using var workbook = new XLWorkbook(stream);
@@ -412,4 +329,46 @@ public class HelperFunction
         workbook.SaveAs(stream);
         return responseList;
     }
-}
+
+
+
+
+<form id="updateForm">
+    <div class="text-dark vh-100 d-flex flex-column align-items-center justify-content-center">
+        <div class="container d-flex flex-column justify-content-center gap-3 shadow-lg p-3 rounded">
+            <p class="fs-1 fw-bold text-center">Update Multiple Records</p>
+
+            <div class="d-flex flex-column align-items-center justify-content-center gap-3">
+                <label for="excelColumn" class="fs-6 fw-bold">Column to update</label>
+                <select class="form-select w-50 rounded-pill" name="excelColumn" id="excelColumn">
+                    <option value="">Please Select</option>
+                    <option value="applicantName">Applicant Name</option>
+                    <option value="eligibleForPension">Eligible For Pension</option>
+                    <option value="accountNo">Account Number</option>
+                    <option value="ifscCode">IFSC Code</option>
+                    <option value="weedout">Weedout Cases</option>
+                </select>
+
+            </div>
+
+            <div id="form">
+
+            </div>
+
+        </div>
+        <div class="container mt-3">
+            <div style="overflow-x: auto;">
+                <table class="table table-light table-striped table-bordered">
+                    <tbody id="response">
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+
+
+dotnet ef dbcontext scaffold "name=DefaultConnection" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models/Entities --force

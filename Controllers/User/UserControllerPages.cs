@@ -200,8 +200,9 @@ namespace PensionTemporary.Controllers.Users
                         var ifsccode = new SqlParameter("@IfscCode", form["ifscCode"].ToString());
                         var oldname = new SqlParameter("@OldName", form["OldapplicantName"].ToString());
                         var newname = new SqlParameter("@NewName", form["NewapplicantName"].ToString());
+                        var reason = new SqlParameter("@Reason",form["Reason"].ToString());
 
-                        rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateApplicantName @RefNo,@AccountNo,@IfscCode,@OldName,@NewName,@divisionCode", refNo, accountNo, ifsccode, oldname, newname, divisionCodeParam);
+                        rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateApplicantName @RefNo,@AccountNo,@IfscCode,@OldName,@NewName,@Reason,@divisionCode", refNo, accountNo, ifsccode, oldname, newname,reason, divisionCodeParam);
                         response = rowsAffected == 0 ? "Failed to update record." : "Updated " + columnToEdit + " value from " + OldValue + " to " + NewValue;
                     }
                     else

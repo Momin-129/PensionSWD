@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PensionTemporary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26d565914b277fd8cc7f8f12244f8f4f35a98471")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc0020bdd530715bdd9136ccf6f94ab0ee9d8b31")]
 [assembly: System.Reflection.AssemblyProductAttribute("PensionTemporary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PensionTemporary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

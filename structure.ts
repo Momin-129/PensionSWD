@@ -22,3 +22,8 @@
 
 //         modelBuilder.Entity<DepartmentFileModel>().HasNoKey();
 
+
+
+
+
+// dotnet ef dbcontext scaffold "name=DefaultConnection" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models/Entities --force
