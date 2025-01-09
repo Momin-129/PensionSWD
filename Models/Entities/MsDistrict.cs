@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+
 namespace PensionTemporary.Models.Entities;
 
 public partial class MsDistrict

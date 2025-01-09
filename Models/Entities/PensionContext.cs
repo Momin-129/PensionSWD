@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace PensionTemporary.Models.Entities;
 
@@ -13,7 +15,11 @@ public partial class PensionContext : DbContext
     {
     }
 
+    public virtual DbSet<BankFile> BankFiles { get; set; }
+
     public virtual DbSet<CasesStopped> CasesStoppeds { get; set; }
+
+    public virtual DbSet<DepartmentFileModel> DepartmentFileModels { get; set; }
 
     public virtual DbSet<JkSwdeliveredMay30> JkSwdeliveredMay30s { get; set; }
 
@@ -31,36 +37,15 @@ public partial class PensionContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    public virtual DbSet<BankFile> BankFiles { get; set; }
-    public virtual DbSet<DepartmentFileModel> DepartmentFileModels { get; set; }
-
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("name=DefaultConnection");
+        => optionsBuilder.UseSqlServer("Name=DefaultConnection");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-
-        modelBuilder.Entity<FileUploaded>().HasNoKey().ToView(null).HasNoKey();
         modelBuilder.Entity<BankFile>(entity =>
         {
             entity.HasNoKey();
-            entity.Property(e => e.Column1);
-            entity.Property(e => e.Column2);
-            entity.Property(e => e.Column3);
-            entity.Property(e => e.Column4);
-            entity.Property(e => e.Column5);
-            entity.Property(e => e.Column5);
-            entity.Property(e => e.Column6);
-            entity.Property(e => e.Column8);
-            entity.Property(e => e.Column9);
-            entity.Property(e => e.Column10);
-            entity.Property(e => e.Column11);
-            entity.Property(e => e.Column12);
-            entity.Property(e => e.Column13);
         });
-
-        modelBuilder.Entity<DepartmentFileModel>().HasNoKey();
 
         modelBuilder.Entity<CasesStopped>(entity =>
         {
@@ -108,6 +93,17 @@ public partial class PensionContext : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("refNo");
             entity.Property(e => e.Uid).HasColumnName("uid");
+        });
+
+        modelBuilder.Entity<DepartmentFileModel>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.Property(e => e.Dob).HasColumnName("DOB");
+            entity.Property(e => e.JkIsss).HasColumnName("JK_ISSS");
+            entity.Property(e => e.PresentGpMuncipality).HasColumnName("Present_GP_Muncipality");
+            entity.Property(e => e.PreviousPensionBankIfsccode).HasColumnName("PreviousPensionBankIFSCcode");
+            entity.Property(e => e.TypeOfDisabilityAsPerUdid).HasColumnName("TypeOfDisabilityAsPerUDID");
         });
 
         modelBuilder.Entity<JkSwdeliveredMay30>(entity =>
@@ -685,7 +681,10 @@ public partial class PensionContext : DbContext
                 .HasNoKey()
                 .ToTable("SearchCount");
 
-            entity.Property(e => e.Count).HasDefaultValueSql("((0))");
+            entity.Property(e => e.Username)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasDefaultValueSql("((0))");
         });
 
         modelBuilder.Entity<UpdateHistory>(entity =>

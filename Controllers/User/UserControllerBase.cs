@@ -26,15 +26,33 @@ namespace PensionTemporary.Controllers.Users
         [HttpGet]
         public IActionResult Index()
         {
-            var count = JsonConvert.DeserializeObject<Dictionary<string, int>>(dbContext.SearchCounts.FirstOrDefault()!.Count!);
-            string? username = HttpContext.Session.GetString("username");
-            var Result = new List<dynamic>
-            {
-                new { user = username, Total = count!["total"], usercount = count[username!.ToString()] }
-            };
-            return View(Result);
+
+            return View();
         }
 
+        public IActionResult Record()
+        {
+            return View();
+        }
 
+        public IActionResult Reports()
+        {
+            return View();
+        }
+
+        public IActionResult UpdateIndividual()
+        {
+            return View();
+        }
+
+        public IActionResult UpdateMultiple()
+        {
+            return View();
+        }
+
+        public IActionResult FilesUploaded()
+        {
+            return View();
+        }
     }
 }

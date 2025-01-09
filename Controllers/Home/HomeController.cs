@@ -42,15 +42,14 @@ public class HomeController : Controller
         var email = new SqlParameter("@Email", "testemail@gmail.com");
         var password = new SqlParameter("@Password", form["password"].ToString());
 
-
-        int.TryParse(form["divisionCode"], out int divisionCode);
+        int divisionCode = Convert.ToInt32(form["divisionCode"].ToString());
 
         var divisionCodeParam = new SqlParameter("@divisionCode", divisionCode);
 
 
-        var result = await dbContext.Users.FromSqlRaw("EXEC UserRegistration @Username,@Email,@UserType,@divisionCode,@Password", username, email, userType, divisionCodeParam, password).ToListAsync();
+        var result = await dbContext.Database.ExecuteSqlRawAsync("EXEC UserRegistration @Username,@Email,@UserType,@divisionCode,@Password", username, email, userType, divisionCodeParam, password);
 
-        if (result != null && result.Count > 0)
+        if (result > 0)
             return RedirectToAction("Index");
         else
             return View();

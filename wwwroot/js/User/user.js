@@ -27,10 +27,12 @@ function setSearchCount(number, userCount) {
   }
 }
 
-$(document).ready(function () {
-  let count = Result[0].total;
-  let usercount = Result[0].usercount;
-  let username = Result[0].user;
+$(document).ready(async function () {
+  const searchCount = await fetch("/User/GetSearchCount");
+  const result = await searchCount.json();
+  let count = result.totalCount;
+  let usercount = result.userTotal;
+  let username = result.username;
 
   if (username == "nicjk") {
     $("ul.userSection").append(`

@@ -5,5 +5,9 @@ namespace PensionTemporary.Models.Entities;
 
 public partial class SearchCount
 {
-    public string Count { get; set; } = null!;
+    public int CountId { get; set; }
+
+    public string Username { get; set; } = null!;
+
+    public int Count { get; set; }
 }

@@ -34,18 +34,24 @@ function setErrorSpan(id, msg) {
 
 $(document).ready(function () {
   $("#updateForm").submit(function (e) {
+    console.log("HERE");
     e.preventDefault();
     const formData = new FormData(this);
     var dataObject = formDataToObject(formData);
     let error = false;
+
     for (let item in dataObject) {
       if (item.includes("New")) {
-        if (
-          dataObject[item] == dataObject["Old" + item.substring("New".length)]
-        ) {
+        const oldKey = "Old" + item.substring("New".length);
+        console.log(
+          `Comparing New (${item}): ${dataObject[item]} with Old (${oldKey}): ${dataObject[oldKey]}`
+        );
+        if (dataObject[item] == dataObject[oldKey]) {
           setErrorSpan(item, "Old and New Value should be different.");
           error = true;
-        } else setErrorSpan(item, "");
+        } else {
+          setErrorSpan(item, "");
+        }
       } else if (item.includes("eligibleForPension")) {
         if (
           dataObject[item].toLowerCase() !== "yes" &&
@@ -60,13 +66,16 @@ $(document).ready(function () {
         if (dataObject[item].length !== 16) {
           setErrorSpan(item, "Account Number should be of 16 digits.");
           error = true;
-        } else setErrorSpan(item, "");
+        } else {
+          setErrorSpan(item, "");
+        }
       } else if (item.includes("ifscCode")) {
         if (dataObject[item].length !== 11) {
           setErrorSpan(item, "Ifsc Code should be of 11 digits.");
           error = true;
+        } else {
+          setErrorSpan(item, "");
         }
-        setErrorSpan(item, "");
       }
     }
 
@@ -77,38 +86,39 @@ $(document).ready(function () {
       })
         .then((res) => res.json())
         .then((data) => {
-          $("#refNo").val("");
-          $("#column").nextAll().remove();
-          $("#column").after(
+          console.log(data);
+          $("#RefNo").val("");
+          $("#ColumnToEdit").nextAll().remove();
+          $("#ColumnToEdit").after(
             `<p class="fs-6 fw-bold text-success">${data.response}</p>`
           );
         });
     }
   });
 
-  $("#column").change(function () {
+  $("#ColumnToEdit").change(function () {
     const value = $(this).val();
     $(this).nextAll().remove();
 
     if (value == "eligibleForPension" || value == "applicantName") {
       $(this).after(`
-            <input placeholder="Account Number" type="text" name="accountNo" id="accountNo" class="form-control w-50 rounded-pill" />
-            <input placeholder="Ifsc Code" type="text" name="ifscCode" id="ifscCode" class="form-control w-50 rounded-pill" />
+            <input placeholder="Account Number" type="text" name="AccountNo" id="AccountNo" class="form-control w-50 rounded-pill" required />
+            <input placeholder="Ifsc Code" type="text" name="IfscCode" id="IfscCode" class="form-control w-50 rounded-pill" required />
         `);
       if (value == "applicantName") {
         $(this).after(`
-            <input placeholder="Eligible For Pension" type="text" name="eligibleForPension" id="eligibleForPension" class="form-control w-50 rounded-pill" />
+            <input placeholder="Eligible For Pension" type="text" name="EligibleForPension" id="EligibleForPension" class="form-control w-50 rounded-pill" required />
         `);
       }
     } else if (value == "accountNo") {
       $(this).after(`
-            <input placeholder="Ifsc Code" type="text" name="ifscCode" id="ifscCode" class="form-control w-50 rounded-pill" />
-            <input placeholder="Eligible For Pension" type="text" name="eligibleForPension" id="eligibleForPension" class="form-control w-50 rounded-pill" />
+            <input placeholder="Ifsc Code" type="text" name="ifscCode" id="ifscCode" class="form-control w-50 rounded-pill" required />
+            <input placeholder="Eligible For Pension" type="text" name="EligibleForPension" id="EligibleForPension" class="form-control w-50 rounded-pill" required />
         `);
     } else if (value == "ifscCode") {
       $(this).after(`
-            <input placeholder="Account Number" type="text" name="accountNo" id="accountNo" class="form-control w-50 rounded-pill" />
-            <input placeholder="Eligible For Pension" type="text" name="eligibleForPension" id="eligibleForPension" class="form-control w-50 rounded-pill" />
+            <input placeholder="Account Number" type="text" name="accountNo" id="accountNo" class="form-control w-50 rounded-pill" required />
+            <input placeholder="Eligible For Pension" type="text" name="EligibleForPension" id="EligibleForPension" class="form-control w-50 rounded-pill" required />
         `);
     }
 
@@ -116,25 +126,21 @@ $(document).ready(function () {
       $(this).after(`
         <input type="text" placeholder="Old ${formatKey(
           value
-        )}" class="form-control w-50 rounded-pill" name="${
-        "Old" + value
-      }" id="${"Old" + value}" />
+        )}" class="form-control w-50 rounded-pill" name="${"OldValue"}" id="${"OldValue"}" required/>
        <input type="text" placeholder="New ${formatKey(
          value
-       )}" class="form-control w-50 rounded-pill" name="${"New" + value}" id="${
-        "New" + value
-      }" />
+       )}" class="form-control w-50 rounded-pill" name="${"NewValue"}" id="${"NewValue"}" required/>
       `);
     }
 
     $(this).after(
-      `<input type="text" class="form-control w-50 rounded-pill" name="Reason" id="Reason" placeholder="Reason of edit" />`
+      `<input type="text" class="form-control w-50 rounded-pill" name="Reason" id="Reason" placeholder="Reason of edit" required />`
     );
 
     $(this)
       .parent()
       .append(
-        `<button class="btn btn-dark rounded-5 mx-auto w-25">Update</button>`
+        `<button type="submit" class="btn btn-dark rounded-5 mx-auto w-25">Update</button>`
       );
   });
 });

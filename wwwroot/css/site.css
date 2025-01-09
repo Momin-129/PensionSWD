@@ -32,6 +32,15 @@ input:focus {
   width: 50%;
 }
 
+table.dataTable td {
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.dataTables_wrapper {
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+
 @media only screen and (max-width: 600px) {
   .small-hidden {
     display: none;

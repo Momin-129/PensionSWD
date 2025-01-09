@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/momin/Github/NIC/PensionTemporary/PensionTemporary.csproj": {}
+    "/home/momin/Projects/PensionSWD/PensionTemporary.csproj": {}
   },
   "projects": {
-    "/home/momin/Github/NIC/PensionTemporary/PensionTemporary.csproj": {
+    "/home/momin/Projects/PensionSWD/PensionTemporary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/momin/Github/NIC/PensionTemporary/PensionTemporary.csproj",
+        "projectUniqueName": "/home/momin/Projects/PensionSWD/PensionTemporary.csproj",
         "projectName": "PensionTemporary",
-        "projectPath": "/home/momin/Github/NIC/PensionTemporary/PensionTemporary.csproj",
+        "projectPath": "/home/momin/Projects/PensionSWD/PensionTemporary.csproj",
         "packagesPath": "/home/momin/.nuget/packages/",
-        "outputPath": "/home/momin/Github/NIC/PensionTemporary/obj/",
+        "outputPath": "/home/momin/Projects/PensionSWD/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/momin/.nuget/NuGet/NuGet.Config"
@@ -49,6 +49,10 @@
             "Microsoft.AspNetCore.HttpOverrides": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.0.5, )"
             },
             "Microsoft.AspNetCore.SignalR": {
               "target": "Package",
@@ -89,7 +93,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.6, 8.0.6]"
+              "version": "[8.0.11, 8.0.11]"
             }
           ],
           "frameworkReferences": {
@@ -100,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.106/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

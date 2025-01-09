@@ -9,10 +9,10 @@
             <p class="fs-1 fw-bold text-center">Update Individual Record</p>
 
             <label for="refNo">Reference Number</label>
-            <input class="form-control w-50 rounded-pill" type="text" name="refNo" id="refNo" />
+            <input class="form-control w-50 rounded-pill" type="text" name="RefNo" id="RefNo" required />
 
             <label for="columnToEdit">Column To Edit</label>
-            <select class="form-select w-50 rounded-pill" name="column" id="column">
+            <select class="form-select w-50 rounded-pill" name="ColumnToEdit" id="ColumnToEdit" required>
                 <option value="">Please Select</option>
                 <option value="applicantName">Applicant Name</option>
                 <option value="eligibleForPension">Eligible For Pension</option>
@@ -38,12 +38,6 @@
     </table>
 </div>
 
-<script>
-    let Result = @Html.Raw(Json.Serialize(Model));
-    let count = Result[0].total;
-    let usercount = Result[0].usercount;
-    let username = Result[0].user;
-    var applicationRoot = "@Url.Content("~")";
-</script>
+
 <script src="~/js/User/user.js"></script>
 <script src="~/js/User/updateIndividual.js"></script>

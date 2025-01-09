@@ -5,8 +5,8 @@ public class ValidationFunctions
 {
     private readonly PensionContext dbContext;
     private readonly ILogger<ValidationFunctions> _logger;
-
     private readonly IWebHostEnvironment _webHostEnvironment;
+
     public ValidationFunctions(PensionContext dbContext, ILogger<ValidationFunctions> logger, IWebHostEnvironment webHostEnvironment)
     {
         this.dbContext = dbContext;
@@ -14,204 +14,148 @@ public class ValidationFunctions
         _webHostEnvironment = webHostEnvironment;
     }
 
-    private bool IsDigitOnly(string value)
+    // Utility functions
+    private bool IsDigitOnly(string value) => !string.IsNullOrEmpty(value) && value.All(char.IsDigit);
+
+    private bool IsValidRegex(string value, string pattern) => Regex.IsMatch(value, pattern);
+
+    private void ValidateLength(string fieldName, string value, int expectedLength, List<string> errors)
     {
-        if (!string.IsNullOrEmpty(value) && !value.All(char.IsDigit))
+        if (value.Length != expectedLength)
         {
-            return false;
+            errors.Add($"{fieldName} should be {expectedLength} characters long.");
         }
-        return true;
     }
+
+    private void ValidateDigitsOnly(string fieldName, string value, List<string> errors)
+    {
+        if (!IsDigitOnly(value))
+        {
+            errors.Add($"{fieldName} should contain only digits.");
+        }
+    }
+
+    private void ValidateRegex(string fieldName, string value, string pattern, string errorMessage, List<string> errors)
+    {
+        if (!IsValidRegex(value, pattern))
+        {
+            errors.Add($"{fieldName} {errorMessage}");
+        }
+    }
+
+    // Centralized validation logic for common fields
+    private void ValidateCommonFields(string accountNo, string ifscCode, string reason, List<string> errors)
+    {
+        ValidateLength("Account Number", accountNo, 16, errors);
+        ValidateLength("IFSC Code", ifscCode, 11, errors);
+        ValidateRegex("Reason", reason, @"^[a-zA-Z0-9\s]*$", "should only contain alphabets, digits, and spaces.", errors);
+    }
+
+    // Specific validation methods
     public List<string> ValidateNewCycleExcelModel(NewCycleExcelModel model)
     {
-        var errorList = new List<string>();
+        var errors = new List<string>();
 
-        if (model.AccountNo!.Length != 16)
-        {
-            errorList.Add("Account Number should be of 16 characters.");
-        }
-        if (model.IFSCCode!.Length != 11)
-        {
-            errorList.Add("IFSC Code should be of 11 characters.");
-        }
+        ValidateLength("Account Number", model.AccountNo!, 16, errors);
+        ValidateLength("IFSC Code", model.IFSCCode!, 11, errors);
+
         // Validate fields containing only digits
-        if (!IsDigitOnly(model.DistrictUidForBank!))
+        ValidateDigitsOnly("District Uid For Bank", model.DistrictUidForBank!, errors);
+        ValidateDigitsOnly("LGD State Code", model.LgdStateCode!, errors);
+        ValidateDigitsOnly("Division Code", model.DivisionCode!, errors);
+        ValidateDigitsOnly("District LGD Code", model.DistrictLGDcode!, errors);
+        ValidateDigitsOnly("TSWO Tehsil Code", model.TSWOTehsilCode!, errors);
+        ValidateDigitsOnly("Account Number", model.AccountNo!, errors);
+
+        if (model.PreviousPension == "YES")
         {
-            errorList.Add("District Uid For Bank should contain only digits.");
-        }
-        if (!IsDigitOnly(model.LgdStateCode!))
-        {
-            errorList.Add("LG State Code should contain only digits.");
-        }
-        if (!IsDigitOnly(model.DivisionCode!))
-        {
-            errorList.Add("Division Code should contain only digits.");
-        }
-        if (!IsDigitOnly(model.DistrictLGDcode!))
-        {
-            errorList.Add("District LGD Code should contain only digits.");
-        }
-        if (!IsDigitOnly(model.TSWOTehsilCode!))
-        {
-            errorList.Add("TSWO Tehsil Code should contain only digits.");
+            ValidateDigitsOnly("Previous Pension Account Number", model.PreviousPensionAccountNo!, errors);
         }
 
-        if (!IsDigitOnly(model.AccountNo))
-        {
-            errorList.Add("Account Number should contain only digits.");
-        }
-        if (model.PreviousPension == "YES" && !IsDigitOnly(model.PreviousPensionAccountNo!))
-        {
-            errorList.Add("Previous Pension Account Number should contain only digits.");
-        }
-
-
-
-        return errorList;
+        return errors;
     }
-
 
     public List<string> ValidateUpdateEligibility(EligibleExcelModel eligible)
     {
-        var errorList = new List<string>();
+        var errors = new List<string>();
 
-        if (eligible.AccountNo.Length != 16)
-        {
-            errorList.Add("Account Number Should be of 16 characters");
-        }
+        ValidateCommonFields(eligible.AccountNo, eligible.IfscCode, eligible.Reason, errors);
+
         if (eligible.OldEligibleForPension == eligible.NewEligibleForPension)
         {
-            errorList.Add("New Value should not be same as old value.");
-        }
-        if (eligible.IfscCode.Length != 11)
-        {
-            errorList.Add("Ifsc Code Length should be of 11 characters.");
-        }
-        if (!Regex.IsMatch(eligible.Reason, @"^[a-zA-Z0-9\s]*$"))
-        {
-            errorList.Add("Reason should only contain alphabets digits and space.");
+            errors.Add("New Value should not be the same as the old value.");
         }
 
-
-        return errorList;
+        return errors;
     }
 
     public List<string> ValidateWeedoutCase(WeedoutExcelModel eligible)
     {
-        var errorList = new List<string>();
+        var errors = new List<string>();
 
-        if (eligible.AccountNo.Length != 16)
-        {
-            errorList.Add("Account Number Should be of 16 characters");
-        }
-        if (eligible.IfscCode.Length != 11)
-        {
-            errorList.Add("Ifsc Code Length should be of 11 characters.");
-        }
-        if (!Regex.IsMatch(eligible.Reason, @"^[a-zA-Z0-9\s]*$"))
-        {
-            errorList.Add("Reason should only contain alphabets digits and space.");
-        }
+        ValidateCommonFields(eligible.AccountNo, eligible.IfscCode, eligible.Reason, errors);
 
-        return errorList;
+        return errors;
     }
 
     public List<string> ValidateUpdateAccountNo(AccountNoExcelModel account)
     {
-        var errorList = new List<string>();
+        var errors = new List<string>();
 
-        if (account.OldAccountNo.Length != 16)
-        {
-            errorList.Add("Old Account Number Should be of 16 characters");
-        }
-        if (account.NewAccountNo.Length != 16)
-        {
-            errorList.Add("New Account Number Should be of 16 characters");
-        }
+        ValidateLength("Old Account Number", account.OldAccountNo, 16, errors);
+        ValidateLength("New Account Number", account.NewAccountNo, 16, errors);
+
         if (account.OldAccountNo == account.NewAccountNo)
         {
-            errorList.Add("New Account Number can't be same as Old Account Number.");
+            errors.Add("New Account Number can't be the same as the Old Account Number.");
         }
 
-        if (account.EligibleForPension.ToLower() != "yes" && account.EligibleForPension.ToLower() != "no")
+        if (!new[] { "yes", "no" }.Contains(account.EligibleForPension.ToLower()))
         {
-            errorList.Add("Eligible For Pension Should be only YES OR NO.");
-        }
-        if (account.IfscCode.Length != 11)
-        {
-            errorList.Add("Ifsc Code Length should be of 11 characters.");
-        }
-        if (!Regex.IsMatch(account.Reason, @"^[a-zA-Z0-9\s]*$"))
-        {
-            errorList.Add("Reason should only contain alphabets digits and space.");
+            errors.Add("Eligible For Pension should be either YES or NO.");
         }
 
+        ValidateCommonFields(account.NewAccountNo, account.IfscCode, account.Reason, errors);
 
-
-        return errorList;
+        return errors;
     }
 
     public List<string> ValidateUpdateIfscCode(IfscExcelModel ifsc)
     {
-        var errorList = new List<string>();
-        if (ifsc.AccountNo.Length != 16)
-        {
-            errorList.Add("Account Number Should be of 16 characters");
-        }
-        if (ifsc.OldIfscCode.Length != 11)
-        {
-            errorList.Add("Old Ifsc Code should be of lenght 11.");
-        }
-        if (ifsc.NewIfscCode.Length != 11)
-        {
-            errorList.Add("New Ifsc Code should be of lenght 11.");
-        }
+        var errors = new List<string>();
+
+        ValidateCommonFields(ifsc.AccountNo, ifsc.NewIfscCode, ifsc.Reason, errors);
+
+        ValidateLength("Old IFSC Code", ifsc.OldIfscCode, 11, errors);
+        ValidateLength("New IFSC Code", ifsc.NewIfscCode, 11, errors);
+
         if (ifsc.OldIfscCode == ifsc.NewIfscCode)
         {
-            errorList.Add("New Ifsc Code can't be same as Old Ifsc Code.");
+            errors.Add("New IFSC Code can't be the same as the Old IFSC Code.");
         }
-        if (ifsc.EligibleForPension.ToLower() != "yes" && ifsc.EligibleForPension.ToLower() != "no")
+
+        if (!new[] { "yes", "no" }.Contains(ifsc.EligibleForPension.ToLower()))
         {
-            errorList.Add("Ifsc Code Length should be of 11 characters.");
+            errors.Add("Eligible For Pension should be either YES or NO.");
         }
-        if (!Regex.IsMatch(ifsc.Reason, @"^[a-zA-Z0-9\s]*$"))
-        {
-            errorList.Add("Reason should only contain alphabets digits and space.");
-        }
-        return errorList;
+
+        return errors;
     }
 
     public List<string> ValidateUpdateApplicantName(NameExcelModel applicant)
     {
-        var errorList = new List<string>();
-        if (applicant.AccountNo.Length != 16)
-        {
-            errorList.Add("Account Number Should be of 16 characters");
-        }
-        if (applicant.IfscCode.Length != 11)
-        {
-            errorList.Add("Ifsc Code Should be of 11 characters");
+        var errors = new List<string>();
 
-        }
-        if (!Regex.IsMatch(applicant.OldName, @"^[a-zA-Z\s]*$"))
-        {
-            errorList.Add("Old Name can only container alphabets and space.");
+        ValidateCommonFields(applicant.AccountNo, applicant.IfscCode, applicant.Reason, errors);
 
-        }
-        if (!Regex.IsMatch(applicant.NewName, @"^[a-zA-Z\s]*$"))
-        {
-            errorList.Add("New Name can only container alphabets and space.");
+        ValidateRegex("Old Name", applicant.OldName, @"^[a-zA-Z\s]*$", "can only contain alphabets and spaces.", errors);
+        ValidateRegex("New Name", applicant.NewName, @"^[a-zA-Z\s]*$", "can only contain alphabets and spaces.", errors);
 
-        }
         if (applicant.OldName == applicant.NewName)
         {
-            errorList.Add("New Applicant Name can't be same as Old Applicant Name.");
-        }
-        if (!Regex.IsMatch(applicant.Reason, @"^[a-zA-Z0-9\s]*$"))
-        {
-            errorList.Add("Reason should only contain alphabets digits and space.");
+            errors.Add("New Applicant Name can't be the same as the Old Applicant Name.");
         }
 
-        return errorList;
+        return errors;
     }
 }

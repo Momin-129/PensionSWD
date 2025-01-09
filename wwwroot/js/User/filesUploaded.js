@@ -40,36 +40,15 @@ function GetReportFile(filePath) {
     });
 }
 
-$(document).ready(function () {
-  const tbody = $("#reportBody");
-  let fileType = "";
-
-  filesUploaded.map((item) => {
-    const file =
-      item.fileUsed.length === 0
-        ? "NIL"
-        : item.fileUsed.substring(
-            item.fileUsed.indexOf("/uploads/") + "/uploads/".length
-          );
-    if (item.updatedColumn == "eligibleForPension") {
-      fileType = "Eligibility Updation File";
-    } else if (item.updatedColumn == "accountNo") {
-      fileType = "Account Updation File";
-    } else if (item.updatedColumn == "ifscCode") {
-      fileType = "Ifsc Code Updation File";
-    } else if (item.updatedColumn == "applicantName") {
-      fileType = "Name Updation File";
-    }
-    const tr = $("<tr/>");
-    tr.append(`
-       <td>${item.updatedAt}</td>
-       <td>${item.updatedBy}</td>
-       <td style="cursor:pointer" onclick='GetReportFile("${
-         item.fileUsed
-       }")'>${file}</td>
-        <td>${item.fileUsed.length == 0 ? "NIL" : fileType}</td>
-       
-    `);
-    tbody.append(tr);
+$(document).ready(async function () {
+  const response = await fetch("/User/GetFileUploaded");
+  const result = await response.json();
+  console.log(result);
+  $("#reportBody").DataTable({
+    data: result.data,
+    columns: result.columns,
+    language: {
+      emptyTable: "No records available",
+    },
   });
 });

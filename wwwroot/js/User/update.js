@@ -22,6 +22,37 @@ function formatKey(key) {
   );
 }
 
+function updateDataTable(selector, data, columns) {
+  if ($.fn.DataTable.isDataTable(selector)) {
+    $(selector).DataTable().clear().destroy();
+  }
+
+  if (data.length) {
+    $(selector).DataTable({
+      data,
+      columns: columns.map((col, index) => ({
+        title: col.title,
+        data: index, // Map columns by index
+      })),
+      scrollX: true,
+      responsive: true,
+    });
+  } else {
+    $(selector).DataTable({
+      data: [], // Empty data array
+      columns: columns.map((col) => ({
+        title: col.title,
+        data: null, // No data available
+      })),
+      scrollX: true,
+      responsive: true,
+      language: {
+        emptyTable: "No records available",
+      },
+    });
+  }
+}
+
 $(document).ready(function () {
   $("#excelColumn").change(function () {
     const value = $(this).val();
@@ -50,54 +81,60 @@ $(document).ready(function () {
     );
   });
 
-  $("#updateForm").submit(function (e) {
+  $("#updateForm").submit(async function (e) {
     e.preventDefault();
     const formData = new FormData(this);
     console.log(formData);
-    fetch("/User/UpdateMultiple", {
+    const response = await fetch("/User/UpdateMultiple", {
       method: "POST",
       body: formData,
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.status) {
-          $("#excel").replaceWith($("#excel").val("").clone(true));
-          $("#response").parent().find("thead").remove();
-          $("#response").empty();
-          $("#response").parent().parent().find("button").remove();
-          const response = data.response;
-          for (let i = 0; i < response.length; i++) {
-            const item = response[i];
-            const thead = $("<thead/>");
-            const theadTr = $("<tr/>");
-            for (let key in item) {
-              theadTr.append(`<th>${formatKey(key)}</th>`);
-            }
-            thead.append(theadTr);
-            $("#response").parent().append(thead);
-            break;
-          }
-          response.map((item) => {
-            const tr = $(`<tr/>`);
-            for (let key in item) {
-              const str = item[key].split(",");
-              const list = str.map((err) => `<p>${err}</p>`).join("");
-              tr.append(`<td>${list}</td>`);
-            }
-            $("#response").append(tr);
-            console.log(item);
-            console.log($("#response").html());
-          });
-          $("#response")
-            .parent()
-            .parent()
-            .parent()
-            .append(
-              `<button class="btn btn-success" onclick='downloadFile("${applicationRoot}/uploads/${data.fileName}");'>Export As EXCEL</button>`
-            );
-        } else {
-          $(this).after(`<p class="fs-4 text-danger">${data.response}</p>`);
-        }
-      });
+    });
+    const result = await response.json();
+    updateDataTable("#responseTable", result.data, result.columns);
+    // fetch("/User/UpdateMultiple", {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     if (data.status) {
+    //       $("#excel").replaceWith($("#excel").val("").clone(true));
+    //       $("#response").parent().find("thead").remove();
+    //       $("#response").empty();
+    //       $("#response").parent().parent().find("button").remove();
+    //       const response = data.response;
+    //       for (let i = 0; i < response.length; i++) {
+    //         const item = response[i];
+    //         const thead = $("<thead/>");
+    //         const theadTr = $("<tr/>");
+    //         for (let key in item) {
+    //           theadTr.append(`<th>${formatKey(key)}</th>`);
+    //         }
+    //         thead.append(theadTr);
+    //         $("#response").parent().append(thead);
+    //         break;
+    //       }
+    //       response.map((item) => {
+    //         const tr = $(`<tr/>`);
+    //         for (let key in item) {
+    //           const str = item[key].split(",");
+    //           const list = str.map((err) => `<p>${err}</p>`).join("");
+    //           tr.append(`<td>${list}</td>`);
+    //         }
+    //         $("#response").append(tr);
+    //         console.log(item);
+    //         console.log($("#response").html());
+    //       });
+    //       $("#response")
+    //         .parent()
+    //         .parent()
+    //         .parent()
+    //         .append(
+    //           `<button class="btn btn-success" onclick='downloadFile("${applicationRoot}/uploads/${data.fileName}");'>Export As EXCEL</button>`
+    //         );
+    //     } else {
+    //       $(this).after(`<p class="fs-4 text-danger">${data.response}</p>`);
+    //     }
+    //   });
   });
 });

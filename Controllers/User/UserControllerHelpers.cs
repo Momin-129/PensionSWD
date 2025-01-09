@@ -13,6 +13,557 @@ namespace PensionTemporary.Controllers.Users
 {
     public partial class UserController
     {
+
+        [HttpGet]
+        public IActionResult GetSearchCount()
+        {
+            string? username = HttpContext.Session.GetString("username");
+            int totalCount = dbContext.SearchCounts.Sum(sc => sc.Count);
+            int userTotal = dbContext.SearchCounts
+                            .Where(sc => sc.Username == username)
+                            .Sum(sc => sc.Count);
+            return Json(new { totalCount, userTotal, username });
+        }
+
+        [HttpPost]
+        public IActionResult GetRecord([FromForm] IFormCollection form)
+        {
+            string searchType = form["searchType"].ToString();
+            string inputNumber = form["inputNumber"].ToString();
+            string? username = HttpContext.Session.GetString("username");
+
+
+            var divisionCode = HttpContext.Session.GetInt32("divisionCode");
+
+
+            List<JkSwdeliveredMay30>? records = null;
+
+            if (searchType == "refId")
+            {
+                if (divisionCode.HasValue && divisionCode != 0)
+                    records = [.. dbContext.JkSwdeliveredMay30s.Where(u => u.RefNo == inputNumber && u.DivisionCode == divisionCode)];
+                else
+                    records = [.. dbContext.JkSwdeliveredMay30s.Where(u => u.RefNo == inputNumber)];
+            }
+
+            if (searchType == "bankAccount")
+            {
+                if (divisionCode.HasValue && divisionCode != 0)
+                    records = [.. dbContext.JkSwdeliveredMay30s.Where(u => u.AccountNo == inputNumber && u.DivisionCode == divisionCode)];
+                else
+                    records = [.. dbContext.JkSwdeliveredMay30s.Where(u => u.AccountNo == inputNumber)];
+            }
+
+
+            List<List<object>> duplicateRecords = [];
+            var duplicateColumns = new[]
+            {
+                new { title = "Select" },            // No need for `data` here since it's array-based
+                new { title = "Reference Number" },
+                new { title = "Name" },
+                new { title = "Parentage" },
+                new { title = "District" }
+            };
+
+            if (records!.Count > 1)
+            {
+                duplicateRecords = records.Select((record, index) => new List<object>
+                {
+                    $"<button class='btn btn-dark' data-value='{index}' id='selectDuplicate'>Select</button>",
+                    record.RefNo!,
+                    record.Name!,
+                    record.Parentage!,
+                    record.AppliedDistrict!
+                }).ToList();
+            }
+
+            List<List<object>> CitizenDetails = records.Select(item => new List<object>
+            {
+                item.RefNo!,
+                item.DivisionName!,
+                item.AppliedTehsil!,
+                item.Name!,
+                item.Parentage!,
+                item.Dob!, // Format date as needed
+                item.PensionType!,
+                $"{item.PresentAddress} {item.PresentTehsil} {item.PresentDistrict}",
+                item.BankName!,
+                item.BranchName!,
+                item.IfscCode!,
+                item.AccountNo!,
+                item.CurrentStatus!,
+                item.JkIsss!,
+                item.GoiNsap!,
+                item.DuplicateBankAccountNo!,
+                item.SharedWithDeptForVerification!,
+                item.EligibleForPension!,
+                item.DeptVerified!,
+                item.DeptVerifiedDate!, // Format date as neede!d
+                item.Remarks2!,
+                item.NsapChk!,
+                item.JanSugamDownloadCycle!,
+                item.OldCdacbenificary!,
+                item.ArrearTotalMonthsAmt!,
+                item.ArrearBankFileGenerated!,
+                item.ArearBankFileBankPaymentOk!
+            }).ToList();
+
+            // Define column structure
+            var columns = new[]
+            {
+                new { title = "Reference Id" },
+                new { title = "District" },
+                new { title = "Applied In Tehsil" },
+                new { title = "Name" },
+                new { title = "Parentage" },
+                new { title = "Date Of Birth" },
+                new { title = "Pension Category" },
+                new { title = "Present Address" },
+                new { title = "Bank Name" },
+                new { title = "Branch Name" },
+                new { title = "IFSC Code" },
+                new { title = "Account Number" },
+                new { title = "Current Status" },
+                new { title = "JK-ISSS" },
+                new { title = "GOI-NSAP" },
+                new { title = "Duplicate Account Number" },
+                new { title = "Shared With Department For Verification" },
+                new { title = "Eligible For Pension" },
+                new { title = "Verified By Department" },
+                new { title = "Department Verified Date" },
+                new { title = "Remarks" },
+                new { title = "NsapChk" },
+                new { title = "Junsugam Download Cycle" },
+                new { title = "CDAC Beneficiary" },
+                new { title = "Arrear Total Amount" },
+                new { title = "Arrear Bank File Generated" },
+                new { title = "Arrear Bank Payment Disbursed" }
+            };
+
+            var paymentColumns = new[]
+            {
+                new { title = "Year" },
+                new { title = "Month" },
+                new { title = "Bank Payment File Generated" },
+                new { title = "Disbursed Payment By Bank" }
+            };
+
+            // Prepare data rows
+            var paymentRecords = new List<List<object>>();
+
+
+            foreach (var record in records)
+            {
+                // Convert record to dictionary for dynamic property access
+                var recordDict = record.GetType()
+                                       .GetProperties()
+                                       .ToDictionary(prop => prop.Name, prop => prop.GetValue(record));
+
+                // Extract payment-related fields dynamically
+                foreach (var key in recordDict.Keys)
+                {
+                    _logger.LogInformation($"KEY : {key}");
+                    if (key.Contains("PaymentOfYear") && !key.Contains("BankRes"))
+                    {
+                        var remainingString = key.Substring("PaymentOfYear".Length);
+
+                        // Match for Year and Month using Regex
+                        var match = System.Text.RegularExpressions.Regex.Match(remainingString, @"([a-zA-Z]+)(\d+)");
+                        if (match.Success)
+                        {
+                            var month = match.Groups[1].Value; // Extracted month (e.g., Jan, Feb)
+                            var year = match.Groups[2].Value;  // Extracted year (e.g., 2023)
+
+                            // Get Bank Payment and Dispersed Payment values
+                            var bankPaymentKey = $"PaymentOfMonth{remainingString}";
+                            var dispersedPaymentKey = $"PaymentOfMonth{remainingString}BankRes";
+
+                            var bankPayment = recordDict.TryGetValue(bankPaymentKey, out var bankValue) ? bankValue ?? "N/A" : "N/A";
+                            var dispersedPayment = recordDict.TryGetValue(dispersedPaymentKey, out var disperseValue) ? disperseValue ?? "N/A" : "N/A";
+
+                            // Add a row for the extracted data
+                            paymentRecords.Add(new List<object>
+                            {
+                                year,
+                                month,
+                                bankPayment,
+                                dispersedPayment
+                            });
+                        }
+                    }
+                }
+            }
+
+
+
+
+            return Json(new { success = true, duplicateColumns, duplicateRecords, CitizenDetails, columns, paymentRecords, paymentColumns });
+        }
+
+        [HttpPost]
+        public IActionResult GetHistory([FromForm] IFormCollection form)
+        {
+            // Validate the reference number
+            if (string.IsNullOrEmpty(form["refNo"]))
+                return Json(new { status = false, response = "Reference number is required." });
+
+            string refNo = form["refNo"].ToString();
+
+            // Get divisionCode from the session
+            int? divisionCode = HttpContext.Session.GetInt32("divisionCode") ?? 0;
+
+            // Get refDivisionCode from the database
+            int? refDivisionCode = dbContext.JkSwdeliveredMay30s
+                .Where(u => u.RefNo == refNo)
+                .Select(u => u.DivisionCode)
+                .FirstOrDefault();
+
+            if (!refDivisionCode.HasValue || (refDivisionCode != divisionCode && divisionCode != 0))
+                return Json(new { status = false, response = "NO RECORD FOUND." });
+
+            // Fetch update history
+            var updateHistory = dbContext.UpdateHistories.FirstOrDefault(u => u.RefNo == refNo);
+            if (updateHistory == null || string.IsNullOrEmpty(updateHistory.UpdationDetails))
+                return Json(new { status = false, response = "NO RECORD FOUND." });
+
+            // Deserialize updation details
+            List<dynamic> updationDetails;
+            try
+            {
+                updationDetails = JsonConvert.DeserializeObject<List<dynamic>>(updateHistory.UpdationDetails)!;
+            }
+            catch (JsonException)
+            {
+                return Json(new { status = false, response = "Failed to parse updation details." });
+            }
+
+            if (updationDetails == null || !updationDetails.Any())
+                return Json(new { status = false, response = "NO RECORD FOUND." });
+
+            // Determine the data structure based on divisionCode
+            var detailedDataColumns = new[]{
+                    new { title = "Table Name" },
+                    new { title = "Column Name" },
+                    new { title = "Old Value" },
+                    new { title = "New Value" },
+                    new { title = "Updated By" },
+                    new { title = "Updated At" },
+                    new { title = "Reason" },
+                    new { title = "Bulk Update" },
+                    new { title = "File Used" }
+            };
+            List<List<object>> detailedDataArray = updationDetails
+                    .Select(detail => new List<object> {
+                        detail.TableName,
+                        detail.ColumnName,
+                        detail.OldValue,
+                        detail.NewValue,
+                        detail.UpdatedBy,
+                        detail.UpdatedAt,
+                        detail.Reason,
+                        detail.BulkUpdate,
+                        detail.FileUsed
+                    })
+                    .ToList();
+
+            var dataColumns = new[]{
+                new { title = "Old Value" },
+                new { title = "New Value" },
+                new { title = "Updated By" },
+                new { title = "Updated At" },
+                new { title = "Reason" },
+                new { title = "Bulk Update" },
+                new { title = "File Used" }
+            };
+            List<List<object>> dataArray = updationDetails
+                    .Select(detail => new List<object> {
+                        detail.OldValue,
+                        detail.NewValue,
+                        detail.UpdatedBy,
+                        detail.UpdatedAt,
+                        detail.Reason,
+                        detail.BulkUpdate,
+                        detail.FileUsed
+                    })
+                    .ToList();
+            if (divisionCode == 0)
+            {
+                return Json(new { status = true, data = detailedDataArray, columns = detailedDataColumns });
+            }
+            else
+            {
+                return Json(new { status = true, data = dataArray, columns = dataColumns });
+            }
+
+
+        }
+        private string UpdateApplicantName(UpdateRequestModel request, int? divisionCode, out string? oldValue, out string? newValue)
+        {
+            oldValue = request.OldValue;
+            newValue = request.NewValue;
+
+            var applicant = new NameExcelModel
+            {
+                RefNo = request.RefNo!,
+                AccountNo = request.AccountNo!,
+                IfscCode = request.IfscCode!,
+                OldName = oldValue!,
+                NewName = newValue!,
+                EligibleForPension = request.EligibleForPension!,
+                Reason = request.Reason!
+            };
+
+            var errors = validation.ValidateUpdateApplicantName(applicant);
+            if (errors.Any())
+            {
+                newValue = null;
+                return "Failure because " + string.Join(", ", errors);
+            }
+
+            var parameters = new[]
+            {
+                new SqlParameter("@RefNo", request.RefNo),
+                new SqlParameter("@AccountNo", request.AccountNo!.PadLeft(16, '0')),
+                new SqlParameter("@IfscCode", request.IfscCode),
+                new SqlParameter("@OldName", oldValue),
+                new SqlParameter("@NewName", newValue),
+                new SqlParameter("@Reason", request.Reason),
+            };
+
+            var rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateApplicantName @RefNo, @AccountNo, @IfscCode, @OldName, @NewName, @Reason", parameters);
+
+            return rowsAffected > 0
+                ? $"Updated {request.ColumnToEdit} value from {oldValue} to {newValue}"
+                : "Failed to update record.";
+        }
+
+        private string UpdateAccountNo(UpdateRequestModel request, int? divisionCode, out string? oldValue, out string? newValue)
+        {
+            oldValue = request.OldValue;
+            newValue = request.NewValue;
+
+            var parameters = new[]
+            {
+                new SqlParameter("@RefNo", request.RefNo),
+                new SqlParameter("@OldAccountNo", oldValue!.PadLeft(16, '0')),
+                new SqlParameter("@NewAccountNo", newValue!.PadLeft(16, '0')),
+                new SqlParameter("@IfscCode", request.IfscCode),
+                new SqlParameter("@Reason", request.Reason)
+            };
+
+            var rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateAccountNo @RefNo, @OldAccountNo, @NewAccountNo, @IfscCode, @Reason", parameters);
+
+            return rowsAffected > 0
+                ? $"Updated {request.ColumnToEdit} value from {oldValue} to {newValue}"
+                : "Failed to update record.";
+        }
+
+        private string UpdateIfscCode(UpdateRequestModel request, int? divisionCode, out string? oldValue, out string? newValue)
+        {
+            oldValue = request.OldValue;
+            newValue = request.NewValue;
+
+            var parameters = new[]
+            {
+                new SqlParameter("@RefNo", request.RefNo),
+                new SqlParameter("@AccountNo", request.AccountNo!.PadLeft(16, '0')),
+                new SqlParameter("@OldIfsc", oldValue),
+                new SqlParameter("@NewIfsc", newValue),
+                new SqlParameter("@Reason", request.Reason)
+            };
+
+            var rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateIfscCode @RefNo, @AccountNo, @OldIfsc, @NewIfsc, @Reason", parameters);
+
+            return rowsAffected > 0
+                ? $"Updated {request.ColumnToEdit} value from {oldValue} to {newValue}"
+                : "Failed to update record.";
+        }
+
+        private string UpdateEligibility(UpdateRequestModel request, int? divisionCode, out string? oldValue, out string? newValue)
+        {
+            oldValue = request.OldValue;
+            newValue = request.NewValue;
+
+            var parameters = new[]
+            {
+                new SqlParameter("@RefNo", request.RefNo),
+                new SqlParameter("@AccountNo", request.AccountNo!.PadLeft(16, '0')),
+                new SqlParameter("@IfscCode", request.IfscCode),
+                new SqlParameter("@NewEligibleForPension", newValue),
+                new SqlParameter("@Reason", request.Reason)
+            };
+
+            var rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateEligibility @RefNo, @AccountNo, @IfscCode, @NewEligibleForPension, @Reason", parameters);
+
+            return rowsAffected > 0
+                ? $"Updated {request.ColumnToEdit} value from {oldValue} to {newValue}"
+                : "Failed to update record.";
+        }
+
+        private string ProcessUpdate(UpdateRequestModel request, int? divisionCode, string username, string ipAddress, out bool status)
+        {
+            status = true;
+            string response;
+
+            // Prepare parameters for history
+            string? oldValue = null;
+            string? newValue = request.NewValue;
+            string? reason = request.Reason;
+
+            switch (request.ColumnToEdit)
+            {
+                case "applicantName":
+                    response = UpdateApplicantName(request, divisionCode, out oldValue, out newValue);
+                    break;
+                case "accountNo":
+                    response = UpdateAccountNo(request, divisionCode, out oldValue, out newValue);
+                    break;
+                case "ifscCode":
+                    response = UpdateIfscCode(request, divisionCode, out oldValue, out newValue);
+                    break;
+                case "eligibleForPension":
+                    response = UpdateEligibility(request, divisionCode, out oldValue, out newValue);
+                    break;
+                default:
+                    status = false;
+                    response = "Invalid column specified for update.";
+                    break;
+            }
+
+            if (status && oldValue != null && newValue != null)
+            {
+                _helper.UpdateHistory(request.RefNo!, oldValue, newValue, ipAddress, username, request.ColumnToEdit!, reason!, "");
+            }
+
+            return response;
+        }
+
+
+        [HttpPost]
+        public IActionResult UpdateIndividual([FromForm] UpdateRequestModel request)
+        {
+            int? divisionCode = HttpContext.Session.GetInt32("divisionCode") ?? 0;
+            string username = HttpContext.Session.GetString("username") ?? "";
+            string ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString()!;
+
+            var refDivisionCode = dbContext.JkSwdeliveredMay30s
+                                           .Where(u => u.RefNo == request.RefNo)
+                                           .Select(u => u.DivisionCode)
+                                           .FirstOrDefault();
+
+            if (divisionCode != refDivisionCode && divisionCode != 0)
+            {
+                return Json(new { status = false, response = "Unauthorized to access this record." });
+            }
+
+            var response = ProcessUpdate(request, divisionCode, username, ipAddress, out bool status);
+
+            return Json(new { status, response });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateMultiple([FromForm] IFormCollection form)
+        {
+            int? divisionCode = HttpContext.Session.GetInt32("divisionCode") ?? 0;
+            string ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString()!;
+            string? username = HttpContext.Session.GetString("username");
+
+            IFormFile? file = form.Files["excel"];
+
+            bool isExcelFile = IsExcelFile(file!);
+
+            if (!isExcelFile)
+                return Json(new { status = false, response = "Not an excel file." });
+
+            string? excelColumn = form["excelColumn"];
+            if (file != null)
+            {
+                (string filePath, string uniqueName) = await _helper.GetFilePath(file);
+                var list = new List<dynamic>();
+                if (excelColumn == "eligibleForPension")
+                {
+                    list = _helper.UpdateEligibilityData(filePath, divisionCode, ipAddress, username!);
+                }
+                else if (excelColumn == "accountNo")
+                {
+                    list = _helper.UpdateAccountNumber(filePath, divisionCode, ipAddress, username!);
+                }
+                else if (excelColumn == "ifscCode")
+                {
+                    list = _helper.UpdateIfscCode(filePath, divisionCode, ipAddress, username!);
+                }
+                else if (excelColumn == "applicantName")
+                {
+                    list = _helper.UpdateApplicantName(filePath, divisionCode, ipAddress, username!);
+                }
+                else if (excelColumn == "weedout")
+                {
+                    list = _helper.WeedoutCases(filePath, divisionCode, ipAddress, username!);
+                }
+                else
+                    return Json(new { status = false });
+
+
+                var columns = new[]
+                {
+                    new { title = "Reference Number" },
+                    new { title = "Applicant Name" },
+                    new { title = "Account Number" },
+                    new { title = "IFSC Code" },
+                    new { title = "Eligible For Pension" },
+                    new { title = "Satus" },
+                };
+
+                List<List<object>> data = list
+                .Select(item => new List<object>
+                {
+                    item.RefrenceNumber,  // Match the property name
+                    item.AccountNumber,
+                    item.IfscCode,
+                    item.EligibleForPension,
+                    item.Status,
+                    item.Reason
+                })
+                .ToList();
+
+                return Json(new { status = true, data, columns, fileName = uniqueName });
+
+            }
+            else
+                return Json(new { status = false, response = "File is  empty." });
+        }
+
+        [HttpGet]
+        public IActionResult GetFileUploaded()
+        {
+            int? divisionCode = HttpContext.Session.GetInt32("divisionCode") ?? 0;
+            string? username = HttpContext.Session.GetString("username");
+            var user = new SqlParameter("@UpdatedBy", username);
+            var filesUploaded = dbContext.Database.SqlQuery<FileUploaded>($"EXEC GetFilesUploaded @UpdatedBy = {user}").AsEnumerable().ToList();
+
+            // Transform to an array of arrays
+            var dataArray = filesUploaded.Select(f => new object[]
+            {
+                f.UpdatedColumn!,
+                f.UpdatedBy!,
+                f.BulkUpdate,
+                f.FileUsed!,
+                f.UpdatedAt!
+            }).ToArray();
+
+            // Create the column definitions for DataTable
+            var columnArray = new[]
+            {
+                new {  title = "Updated Column" },
+                new {  title = "Updated By" },
+                new {  title = "Bulk Update" },
+                new {  title = "File Used" },
+                new {  title = "Updated At" }
+            };
+
+            return Json(new { data = dataArray, columns = columnArray });
+        }
+
         public string CopyAndRenameFile(string sourceFilePath)
         {
 

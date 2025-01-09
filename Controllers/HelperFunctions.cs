@@ -2,6 +2,7 @@ using System.Data;
 using ClosedXML.Excel;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using PensionTemporary.Models.Entities;
 
 public class HelperFunction
@@ -46,25 +47,53 @@ public class HelperFunction
 
     public void UpdateHistory(string refNo, string OldValue, string NewValue, string ipAddress, string username, string columnToEdit, string Reason, string filePath)
     {
-        var TableName = new SqlParameter("@TableName", "jkSWdeliveredMay30");
-        var ColumnName = new SqlParameter("@ColumnName", columnToEdit);
-        var refNoParam = new SqlParameter("@refNo", refNo);
-        var OldValueParam = new SqlParameter("@OldValue", OldValue);
-        var NewValueParam = new SqlParameter("@NewValue", NewValue);
-        var BulkUpdate = new SqlParameter("@BulkUpdate", filePath.Length != 0 ? 1 : 0);
-        var FileUsed = new SqlParameter("@FileUsed", filePath);
-        var UpdatedBy = new SqlParameter("@UpdatedBy", username);
-        var IpAddress = new SqlParameter("@IpAddress", ipAddress);
-        var UpdatedAt = new SqlParameter("@UpdatedAt", DateTime.Now.ToString());
-        var ReasonParam = new SqlParameter("@Reason", Reason);
-        var descriptionParameter = new SqlParameter("@Description", SqlDbType.NVarChar, -1)
+        // Fetch existing update history record
+        var updationHistory = dbContext.UpdateHistories.FirstOrDefault(uh => uh.RefNo == refNo);
+        List<dynamic> updationDetails = new List<dynamic>();
+
+        if (updationHistory != null && !string.IsNullOrEmpty(updationHistory.UpdationDetails))
         {
-            Direction = ParameterDirection.Output
+            // Deserialize existing update details if available
+            updationDetails = JsonConvert.DeserializeObject<List<dynamic>>(updationHistory.UpdationDetails) ?? new List<dynamic>();
+        }
+
+        // Create new update detail
+        var UpdationDetail = new
+        {
+            TableName = "jkSWdeliveredMay30",
+            ColumnName = columnToEdit,
+            OldValue = OldValue,
+            NewValue = NewValue,
+            BulkUpdate = !string.IsNullOrEmpty(filePath) ? 1 : 0,
+            FileUsed = filePath,
+            UpdatedBy = username,
+            IpAddress = ipAddress,
+            UpdatedAt = DateTime.Now.ToString("dd MMM yyyy hh:mm:ss tt"),
+            Reason = Reason,
         };
 
+        if (updationHistory == null)
+        {
+            // If no history exists, create a new one
+            var newHistory = new UpdateHistory
+            {
+                RefNo = refNo,
+                UpdationDetails = JsonConvert.SerializeObject(new List<dynamic> { UpdationDetail })
+            };
 
-        dbContext.Database.ExecuteSqlRaw("EXEC UpdateHistoryTable @TableName, @ColumnName, @RefNo, @OldValue, @NewValue,@BulkUpdate,@FileUsed,@UpdatedBy, @IpAddress, @UpdatedAt, @Reason, @Description OUTPUT", TableName, ColumnName, refNoParam, OldValueParam, NewValueParam, BulkUpdate, FileUsed, UpdatedBy, IpAddress, UpdatedAt, ReasonParam, descriptionParameter);
+            dbContext.UpdateHistories.Add(newHistory);
+        }
+        else
+        {
+            // Append the new detail to the existing list and update the record
+            updationDetails.Add(UpdationDetail);
+            updationHistory.UpdationDetails = JsonConvert.SerializeObject(updationDetails);
+        }
+
+        // Save changes to the database
+        dbContext.SaveChanges();
     }
+
 
     public dynamic UpdatedData(string RefNo, string AccountNo, string IfscCode, string EligibleForPension, string status, string Reason)
     {
@@ -130,7 +159,7 @@ public class HelperFunction
                 }
                 else
                 {
-                    rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateEligibility @refNo,@accountNo,@ifscCode,@NewEligibleForPension,@Reason,@divisionCode", refNo, accountNo, ifscCode, eligibleForPension, reason, divisionCodeParam);
+                    rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateEligibility @refNo,@accountNo,@ifscCode,@NewEligibleForPension,@Reason", refNo, accountNo, ifscCode, eligibleForPension, reason);
                     status = "Updated Successfully.";
 
                     UpdateHistory(eligible.RefNo, eligible.OldEligibleForPension, eligible.NewEligibleForPension, ipAddress, username, "eligibleForPension", eligible.Reason, filePath);
@@ -194,7 +223,7 @@ public class HelperFunction
                 }
                 else
                 {
-                    rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateEligibility @refNo,@accountNo,@ifscCode,@NewEligibleForPension,@Reason,@divisionCode", refNo, accountNo, ifscCode, eligibleForPension, reason, divisionCodeParam);
+                    rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateEligibility @refNo,@accountNo,@ifscCode,@NewEligibleForPension,@Reason", refNo, accountNo, ifscCode, eligibleForPension, reason);
                     status = "Updated Successfully.";
 
                     UpdateHistory(weedout.RefNo, "YES", weedout.EligibleForPension, ipAddress, username, "eligibleForPension", weedout.Reason, filePath);
@@ -257,7 +286,7 @@ public class HelperFunction
                 }
                 else
                 {
-                    rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateAccountNo @refNo,@OldAccountNo,@NewAccountNo,@ifscCode,@Reason,@divisionCode", refNo, oldaccountNo, newaccoutNo, ifscCode, reason, divisionCodeParam);
+                    rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateAccountNo @refNo,@OldAccountNo,@NewAccountNo,@ifscCode,@Reason", refNo, oldaccountNo, newaccoutNo, ifscCode, reason);
                     status = "Updated Successfully.";
 
                     UpdateHistory(account.RefNo, account.OldAccountNo, account.NewAccountNo, ipAddress, username, "accountNo", account.Reason!, filePath);
@@ -321,7 +350,7 @@ public class HelperFunction
                 }
                 else
                 {
-                    rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateIfscCode @refNo,@AccountNo,@OldIfsc,@NewIfsc,@Reason,@divisionCode", refNo, accountNo, oldifsc, newifsc, reason, divisionCodeParam);
+                    rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateIfscCode @refNo,@AccountNo,@OldIfsc,@NewIfsc,@Reason", refNo, accountNo, oldifsc, newifsc, reason);
 
                     UpdateHistory(ifsc.RefNo, ifsc.OldIfscCode, ifsc.NewIfscCode, ipAddress, username, "ifscCode", ifsc.Reason!, filePath);
                     status = "Updated Successfully.";
@@ -387,13 +416,10 @@ public class HelperFunction
                 else
                 {
                     status = "Updated Successfully.";
-                    rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateApplicantName @refNo,@AccountNo,@IfscCode,@OldName,@NewName,@Reason,@divisionCode", refNo, accountNo, ifsc, oldname, newname, reason, divisionCodeParam);
+                    rowsAffected = dbContext.Database.ExecuteSqlRaw("EXEC UpdateApplicantName @refNo,@AccountNo,@IfscCode,@OldName,@NewName,@Reason", refNo, accountNo, ifsc, oldname, newname, reason);
                     UpdateHistory(applicant.RefNo, applicant.OldName, applicant.NewName, ipAddress, username, "applicantName", applicant.Reason!, filePath);
                 }
             }
-
-
-
 
             row.Cell(newColumnNumber).Value = status;
 
@@ -412,4 +438,7 @@ public class HelperFunction
         workbook.SaveAs(stream);
         return responseList;
     }
+
+
+
 }
