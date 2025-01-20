@@ -511,11 +511,12 @@ namespace PensionTemporary.Controllers.Users
                     new { title = "Account Number" },
                     new { title = "IFSC Code" },
                     new { title = "Eligible For Pension" },
+                    new { title = "Eligible For Pension" },
                     new { title = "Satus" },
                 };
 
-                List<List<object>> data = list
-                .Select(item => new List<object>
+                List<List<dynamic>> data = list
+                .Select(item => new List<dynamic>
                 {
                     item.RefrenceNumber,  // Match the property name
                     item.AccountNumber,

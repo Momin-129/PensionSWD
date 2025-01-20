@@ -430,6 +430,7 @@ public class HelperFunction
                 AccountNumber = applicant.AccountNo.PadLeft(16, '0'),
                 IfscCode = applicant.IfscCode,
                 EligibleForPension = applicant.EligibleForPension,
+                Reason = applicant.Reason,
                 Status = status,
             };
             responseList.Add(updatedData);

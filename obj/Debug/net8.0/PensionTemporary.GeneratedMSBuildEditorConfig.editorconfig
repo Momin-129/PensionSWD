@@ -9,83 +9,83 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PensionTemporary
 build_property.RootNamespace = PensionTemporary
-build_property.ProjectDir = /home/momin/Projects/PensionSWD/
+build_property.ProjectDir = /home/momin/Projects/PensionSWD/PensionSWD/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/momin/Projects/PensionSWD
+build_property.MSBuildProjectDirectory = /home/momin/Projects/PensionSWD/PensionSWD
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/momin/Projects/PensionSWD/Views/Home/Index.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/Home/Register.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/Home/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/Shared/Error.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/Shared/Navbar.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/Shared/Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL05hdmJhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/User/DepartmentVerified.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/User/DepartmentVerified.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9EZXBhcnRtZW50VmVyaWZpZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/User/FilesUploaded.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/User/FilesUploaded.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9GaWxlc1VwbG9hZGVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/User/GenerateBankFile.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/User/GenerateBankFile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9HZW5lcmF0ZUJhbmtGaWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/User/GenerateFileForDepartment.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/User/GenerateFileForDepartment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9HZW5lcmF0ZUZpbGVGb3JEZXBhcnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/User/Index.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/User/InsertNewCycle.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/User/InsertNewCycle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9JbnNlcnROZXdDeWNsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/User/Record.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/User/Record.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9SZWNvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/User/Reports.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/User/Reports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9SZXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/User/UpdateIndividual.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/User/UpdateIndividual.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9VcGRhdGVJbmRpdmlkdWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/User/UpdateMultiple.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/User/UpdateMultiple.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9VcGRhdGVNdWx0aXBsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/_ViewImports.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/_ViewStart.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/momin/Projects/PensionSWD/Views/Shared/_Layout.cshtml]
+[/home/momin/Projects/PensionSWD/PensionSWD/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-19nbelt17w

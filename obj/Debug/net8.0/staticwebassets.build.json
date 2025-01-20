@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WFXpGPlsIuNh+wMhRU18Rs9HliQf6qPA9u2OpMHzbhg=",
+  "Hash": "TTvLCNXvZUgg8vlHRv4bsJBvasuPPGl/lGqj/3EENJI=",
   "Source": "PensionTemporary",
   "BasePath": "_content/PensionTemporary",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "PensionTemporary/wwwroot",
       "Source": "PensionTemporary",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/home/momin/Github/PensionSWD/obj/Debug/net8.0/scopedcss/bundle/PensionTemporary.styles.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/obj/Debug/net8.0/scopedcss/bundle/PensionTemporary.styles.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Computed",
-      "ContentRoot": "/home/momin/Github/PensionSWD/obj/Debug/net8.0/scopedcss/bundle/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/obj/Debug/net8.0/scopedcss/bundle/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "PensionTemporary.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/home/momin/Github/PensionSWD/obj/Debug/net8.0/scopedcss/bundle/PensionTemporary.styles.css"
+      "OriginalItemSpec": "/home/momin/Projects/PensionSWD/PensionSWD/obj/Debug/net8.0/scopedcss/bundle/PensionTemporary.styles.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/obj/Debug/net8.0/scopedcss/projectbundle/PensionTemporary.bundle.scp.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/obj/Debug/net8.0/scopedcss/projectbundle/PensionTemporary.bundle.scp.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Computed",
-      "ContentRoot": "/home/momin/Github/PensionSWD/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/obj/Debug/net8.0/scopedcss/projectbundle/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "PensionTemporary.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/home/momin/Github/PensionSWD/obj/Debug/net8.0/scopedcss/projectbundle/PensionTemporary.bundle.scp.css"
+      "OriginalItemSpec": "/home/momin/Projects/PensionSWD/PensionSWD/obj/Debug/net8.0/scopedcss/projectbundle/PensionTemporary.bundle.scp.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/css/fileupload.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/css/fileupload.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "css/fileupload.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot/css/fileupload.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/css/site.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/css/site.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/favicon.ico",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/favicon.ico",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot/favicon.ico"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/images/spec.png",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/images/spec.png",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "images/spec.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot/images/spec.png"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/captcha.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/captcha.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/captcha.js",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot/js/captcha.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/fileupload.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/fileupload.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/fileupload.js",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot/js/fileupload.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/Home/login.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/Home/login.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/Home/login.js",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot/js/Home/login.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/Home/register.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/Home/register.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/Home/register.js",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot/js/Home/register.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/site.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/site.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/User/departmentFile.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/User/departmentFile.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/User/departmentFile.js",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot/js/User/departmentFile.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/User/filesUploaded.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/User/filesUploaded.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/User/filesUploaded.js",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot/js/User/filesUploaded.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/User/generateFile.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/User/generateFile.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/User/generateFile.js",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot/js/User/generateFile.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/User/insertNewCycle.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/User/insertNewCycle.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/User/insertNewCycle.js",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot/js/User/insertNewCycle.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/User/reports.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/User/reports.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/User/reports.js",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot/js/User/reports.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/User/script.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/User/script.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/User/script.js",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot/js/User/script.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/User/update.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/User/update.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/User/update.js",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot/js/User/update.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/User/updateIndividual.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/User/updateIndividual.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/User/updateIndividual.js",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot/js/User/updateIndividual.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/js/User/user.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/js/User/user.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "js/User/user.js",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot/js/User/user.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -758,10 +758,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -777,10 +777,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -796,10 +796,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -853,10 +853,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -872,10 +872,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1100,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1119,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1138,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1176,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1195,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/bootstrap/LICENSE",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/bootstrap/LICENSE",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/LICENSE"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1290,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery-validation/dist/additional-methods.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1328,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/additional-methods.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1347,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/additional-methods.min.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1366,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/jquery.validate.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1385,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/jquery.validate.min.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery-validation/LICENSE.md",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery-validation/LICENSE.md",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1404,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/LICENSE.md"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery/dist/jquery.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery/dist/jquery.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1423,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery/dist/jquery.min.js",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery/dist/jquery.min.js",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1442,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.min.js"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery/dist/jquery.min.map",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery/dist/jquery.min.map",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1461,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.min.map"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/lib/jquery/LICENSE.txt",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/lib/jquery/LICENSE.txt",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1480,10 +1480,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/resources/AccountNoTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/resources/AccountNoTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "resources/AccountNoTemplate.xlsx",
       "AssetKind": "Build",
@@ -1499,10 +1499,10 @@
       "OriginalItemSpec": "wwwroot/resources/AccountNoTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/resources/EligibleTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/resources/EligibleTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "resources/EligibleTemplate.xlsx",
       "AssetKind": "Build",
@@ -1518,10 +1518,10 @@
       "OriginalItemSpec": "wwwroot/resources/EligibleTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/resources/IfscTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/resources/IfscTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "resources/IfscTemplate.xlsx",
       "AssetKind": "Build",
@@ -1537,10 +1537,10 @@
       "OriginalItemSpec": "wwwroot/resources/IfscTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/resources/login.png",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/resources/login.png",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "resources/login.png",
       "AssetKind": "All",
@@ -1556,10 +1556,10 @@
       "OriginalItemSpec": "wwwroot/resources/login.png"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/resources/NameTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/resources/NameTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "resources/NameTemplate.xlsx",
       "AssetKind": "Build",
@@ -1575,10 +1575,10 @@
       "OriginalItemSpec": "wwwroot/resources/NameTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/resources/WeedoutTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/resources/WeedoutTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "resources/WeedoutTemplate.xlsx",
       "AssetKind": "Build",
@@ -1594,10 +1594,10 @@
       "OriginalItemSpec": "wwwroot/resources/WeedoutTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/09be39_24_05_2024_WeedoutTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/09be39_24_05_2024_WeedoutTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/09be39_24_05_2024_WeedoutTemplate.xlsx",
       "AssetKind": "Build",
@@ -1613,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot/uploads/09be39_24_05_2024_WeedoutTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/0ec536_08_12_2024_AccountNoTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/0ec536_08_12_2024_AccountNoTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/0ec536_08_12_2024_AccountNoTemplate.xlsx",
       "AssetKind": "Build",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot/uploads/0ec536_08_12_2024_AccountNoTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/15d736_24_05_2024_WeedoutTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/15d736_24_05_2024_WeedoutTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/15d736_24_05_2024_WeedoutTemplate.xlsx",
       "AssetKind": "Build",
@@ -1651,10 +1651,10 @@
       "OriginalItemSpec": "wwwroot/uploads/15d736_24_05_2024_WeedoutTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/33d883_08_12_2024_AccountNoTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/33d883_08_12_2024_AccountNoTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/33d883_08_12_2024_AccountNoTemplate.xlsx",
       "AssetKind": "Build",
@@ -1670,10 +1670,29 @@
       "OriginalItemSpec": "wwwroot/uploads/33d883_08_12_2024_AccountNoTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/5bda62_08_12_2024_AccountNoTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/47c2ef_20_01_2025_NameTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
+      "BasePath": "_content/PensionTemporary",
+      "RelativePath": "uploads/47c2ef_20_01_2025_NameTemplate.xlsx",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "wwwroot/uploads/47c2ef_20_01_2025_NameTemplate.xlsx"
+    },
+    {
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/5bda62_08_12_2024_AccountNoTemplate.xlsx",
+      "SourceId": "PensionTemporary",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/5bda62_08_12_2024_AccountNoTemplate.xlsx",
       "AssetKind": "Build",
@@ -1689,10 +1708,10 @@
       "OriginalItemSpec": "wwwroot/uploads/5bda62_08_12_2024_AccountNoTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/706a52_24_05_2024_WeedoutTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/706a52_24_05_2024_WeedoutTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/706a52_24_05_2024_WeedoutTemplate.xlsx",
       "AssetKind": "Build",
@@ -1708,10 +1727,10 @@
       "OriginalItemSpec": "wwwroot/uploads/706a52_24_05_2024_WeedoutTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/7611bc_24_05_2024_WeedoutTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/7611bc_24_05_2024_WeedoutTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/7611bc_24_05_2024_WeedoutTemplate.xlsx",
       "AssetKind": "Build",
@@ -1727,10 +1746,29 @@
       "OriginalItemSpec": "wwwroot/uploads/7611bc_24_05_2024_WeedoutTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/92c150_08_12_2024_NameTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/789e88_20_01_2025_NameTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
+      "BasePath": "_content/PensionTemporary",
+      "RelativePath": "uploads/789e88_20_01_2025_NameTemplate.xlsx",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "wwwroot/uploads/789e88_20_01_2025_NameTemplate.xlsx"
+    },
+    {
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/92c150_08_12_2024_NameTemplate.xlsx",
+      "SourceId": "PensionTemporary",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/92c150_08_12_2024_NameTemplate.xlsx",
       "AssetKind": "Build",
@@ -1746,10 +1784,10 @@
       "OriginalItemSpec": "wwwroot/uploads/92c150_08_12_2024_NameTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/adcf5e_08_12_2024_AccountNoTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/adcf5e_08_12_2024_AccountNoTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/adcf5e_08_12_2024_AccountNoTemplate.xlsx",
       "AssetKind": "Build",
@@ -1765,10 +1803,10 @@
       "OriginalItemSpec": "wwwroot/uploads/adcf5e_08_12_2024_AccountNoTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/b7be13_24_05_2024_WeedoutTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/b7be13_24_05_2024_WeedoutTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/b7be13_24_05_2024_WeedoutTemplate.xlsx",
       "AssetKind": "Build",
@@ -1784,10 +1822,10 @@
       "OriginalItemSpec": "wwwroot/uploads/b7be13_24_05_2024_WeedoutTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/cfba06_24_05_2024_WeedoutTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/cfba06_24_05_2024_WeedoutTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/cfba06_24_05_2024_WeedoutTemplate.xlsx",
       "AssetKind": "Build",
@@ -1803,10 +1841,10 @@
       "OriginalItemSpec": "wwwroot/uploads/cfba06_24_05_2024_WeedoutTemplate.xlsx"
     },
     {
-      "Identity": "/home/momin/Github/PensionSWD/wwwroot/uploads/f43df7_24_05_2024_WeedoutTemplate.xlsx",
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/f43df7_24_05_2024_WeedoutTemplate.xlsx",
       "SourceId": "PensionTemporary",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/momin/Github/PensionSWD/wwwroot/",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
       "BasePath": "_content/PensionTemporary",
       "RelativePath": "uploads/f43df7_24_05_2024_WeedoutTemplate.xlsx",
       "AssetKind": "Build",

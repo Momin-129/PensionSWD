@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I5k5GpbKJBcM6cR5L4eg7I5QFXCpnaSyVEkRLXW1uwPwoUTa+3Xb9Fzn11v6/15lhaLEbiCpbPAfhxrzakfXmw==",
+  "dgSpecHash": "2ecGEYxoALvoVyN5ajk1b0aiXzTvFcl/UIRkCi1r+3ASqrUfoV8nftPmowtoX1hCp/gtM+eQjHOB7MbuWtwLYg==",
   "success": true,
-  "projectFilePath": "/home/momin/Projects/PensionSWD/PensionTemporary.csproj",
+  "projectFilePath": "/home/momin/Projects/PensionSWD/PensionSWD/PensionTemporary.csproj",
   "expectedPackageFiles": [
     "/home/momin/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/home/momin/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",

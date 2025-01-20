@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/momin/Projects/PensionSWD/PensionTemporary.csproj": {}
+    "/home/momin/Projects/PensionSWD/PensionSWD/PensionTemporary.csproj": {}
   },
   "projects": {
-    "/home/momin/Projects/PensionSWD/PensionTemporary.csproj": {
+    "/home/momin/Projects/PensionSWD/PensionSWD/PensionTemporary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/momin/Projects/PensionSWD/PensionTemporary.csproj",
+        "projectUniqueName": "/home/momin/Projects/PensionSWD/PensionSWD/PensionTemporary.csproj",
         "projectName": "PensionTemporary",
-        "projectPath": "/home/momin/Projects/PensionSWD/PensionTemporary.csproj",
+        "projectPath": "/home/momin/Projects/PensionSWD/PensionSWD/PensionTemporary.csproj",
         "packagesPath": "/home/momin/.nuget/packages/",
-        "outputPath": "/home/momin/Projects/PensionSWD/obj/",
+        "outputPath": "/home/momin/Projects/PensionSWD/PensionSWD/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/momin/.nuget/NuGet/NuGet.Config"
