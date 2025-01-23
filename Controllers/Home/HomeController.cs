@@ -113,10 +113,10 @@ public class HomeController : Controller
             var principal = new ClaimsPrincipal(identity);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
             _logger.LogInformation($"USER : {User[0].Username}");
-            return RedirectToAction("Index", "User");
+            return Json(new { status = true, url = "/User/Index" });
         }
 
-        return RedirectToAction("Index", new { errorMessage = "Invalid Username or Password." });
+        return Json(new { status = false, message = "Invalid username or password." });
 
     }
 

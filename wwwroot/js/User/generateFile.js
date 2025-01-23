@@ -93,6 +93,15 @@ function handleFormSubmit(e) {
     });
 }
 
-$(document).ready(function () {
+$(document).ready(async function () {
   $("form").on("submit", handleFormSubmit);
+
+  const response = await fetch("/User/GetDistricts");
+  const districts = await response.json();
+  console.log(districts);
+  districts.districts.map((item) => {
+    $("#district").append(`
+    <option value="${item.districtLgdCode} ${item.divisionCode}" >${item.districtName}</option>
+`);
+  });
 });

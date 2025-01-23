@@ -33,8 +33,9 @@ $(document).ready(async function () {
   let count = result.totalCount;
   let usercount = result.userTotal;
   let username = result.username;
+  let userType = result.userType;
 
-  if (username == "nicjk") {
+  if (userType == "Sectary") {
     $("ul.userSection").append(`
     <li class="nav-item">
        <a class="nav-link" href="/User/InsertNewCycle">Insert New Cycle</a>

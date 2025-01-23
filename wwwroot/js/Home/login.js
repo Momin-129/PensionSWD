@@ -1,7 +1,16 @@
 $(document).ready(function () {
-  $("form").on("submit", function (event) {
-    if (!(window.captchaText == $("#captchaInput").val())) {
-      event.preventDefault();
+  $("#loginForm").on("submit", async function (event) {
+    event.preventDefault();
+    const formdata = new FormData(this);
+    const response = await fetch("/Home/Login", {
+      method: "POST",
+      body: formdata,
+    });
+    const result = await response.json();
+    if (result.status) {
+      window.location.href = result.url;
+    } else {
+      $("#error_message").text(result.message);
     }
   });
 });

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TTvLCNXvZUgg8vlHRv4bsJBvasuPPGl/lGqj/3EENJI=",
+  "Hash": "znjDHT3IoQZ+FVAXElZhlRy8AmWLds13uEHI0FgIh9I=",
   "Source": "PensionTemporary",
   "BasePath": "_content/PensionTemporary",
   "Mode": "Default",
@@ -1706,6 +1706,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "wwwroot/uploads/5bda62_08_12_2024_AccountNoTemplate.xlsx"
+    },
+    {
+      "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/6a85c1_20_01_2025_NameTemplate.xlsx",
+      "SourceId": "PensionTemporary",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/",
+      "BasePath": "_content/PensionTemporary",
+      "RelativePath": "uploads/6a85c1_20_01_2025_NameTemplate.xlsx",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "wwwroot/uploads/6a85c1_20_01_2025_NameTemplate.xlsx"
     },
     {
       "Identity": "/home/momin/Projects/PensionSWD/PensionSWD/wwwroot/uploads/706a52_24_05_2024_WeedoutTemplate.xlsx",

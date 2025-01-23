@@ -18,11 +18,19 @@ namespace PensionTemporary.Controllers.Users
         public IActionResult GetSearchCount()
         {
             string? username = HttpContext.Session.GetString("username");
+            string? userType = dbContext.Users.FirstOrDefault(u => u.Username == username)!.UserType;
             int totalCount = dbContext.SearchCounts.Sum(sc => sc.Count);
             int userTotal = dbContext.SearchCounts
                             .Where(sc => sc.Username == username)
                             .Sum(sc => sc.Count);
-            return Json(new { totalCount, userTotal, username });
+            return Json(new { totalCount, userTotal, username, userType });
+        }
+
+        [HttpGet]
+        public IActionResult GetDistricts()
+        {
+            var districts = dbContext.MsDistricts.ToList();
+            return Json(new { districts });
         }
 
         [HttpPost]
@@ -511,7 +519,7 @@ namespace PensionTemporary.Controllers.Users
                     new { title = "Account Number" },
                     new { title = "IFSC Code" },
                     new { title = "Eligible For Pension" },
-                    new { title = "Eligible For Pension" },
+                    new { title = "Reason" },
                     new { title = "Satus" },
                 };
 
@@ -891,7 +899,7 @@ namespace PensionTemporary.Controllers.Users
             return data.GroupBy(keySelector).Where(g => g.Count() > 1).ToList();
         }
 
-        private void RemoveInvalidItems(List<BankFile> data, string username, string ipAddress)
+        private void RemoveInvalidItems(List<PensionTemporary.Models.Entities.BankFile> data, string username, string ipAddress)
         {
             foreach (var item in data)
             {
@@ -911,7 +919,7 @@ namespace PensionTemporary.Controllers.Users
             }
         }
 
-        private string GenerateReport(List<BankFile> data)
+        private string GenerateReport(List<PensionTemporary.Models.Entities.BankFile> data)
         {
             var workbook = new XLWorkbook();
             var worksheet = workbook.Worksheets.Add("Sheet1");

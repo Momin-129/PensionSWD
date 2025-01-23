@@ -54,5 +54,32 @@ namespace PensionTemporary.Controllers.Users
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult InsertNewCycle()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult GenerateBankFile()
+        {
+
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult GenerateFileForDepartment()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult DepartmentVerified()
+        {
+            return View();
+        }
+
+
     }
 }
